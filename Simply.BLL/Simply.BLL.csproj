@@ -8,4 +8,9 @@
     <ProjectReference Include="..\Simply.DAL.EntityFrameworkCore\Simply.DAL.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DbCommandService\" />
+    <Folder Include="DbQueryService\" />
+  </ItemGroup>
+
 </Project>
