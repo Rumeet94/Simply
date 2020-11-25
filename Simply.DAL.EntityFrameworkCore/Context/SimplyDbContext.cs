@@ -1,14 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using Simply.DAL.EntityFrameworkCore.DbModelCreaters;
+using Simply.DAL.EntityFrameworkCore.DbModelCreaters.Creater;
 using Simply.DAL.EntityFrameworkCore.Entity;
 using Simply.DAL.EntityFrameworkCore.Entity.Personals;
 using Simply.DAL.EntityFrameworkCore.Entity.Types;
 using Simply.DAL.EntityFrameworkCore.Initializers;
 
 namespace Simply.DAL.EntityFrameworkCore.Context {
-	public class SimplyDbContext : DbContext {
+	internal class SimplyDbContext : DbContext {
 		private const string _connectionString = "Server=(localdb)\\mssqllocaldb;Database=SimplyDb;Trusted_Connection=True;";
+
+		private readonly IDbModelsCreater _dbModelsCreater = new DbModelCreater();
+		private readonly ISimplyDbInitializer _dbInitializer = new SimplyDbInitializer();
 
 		public DbSet<Movie> Movies { get; set; }
 
@@ -18,7 +21,7 @@ namespace Simply.DAL.EntityFrameworkCore.Context {
 
 		public DbSet<Owner> Owners { get; set; }
 
-		public DbSet<Country> Country { get; set; }
+		public DbSet<Country> Countries { get; set; }
 
 		public DbSet<Genre> Genres { get; set; }
 
@@ -29,11 +32,8 @@ namespace Simply.DAL.EntityFrameworkCore.Context {
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder) {
-			new GenreDbModelCreater().CreateModel(modelBuilder);
-			new OwnerDbModelCreater().CreateModel(modelBuilder);
-			new MovieDbModelCreater().CreateModel(modelBuilder);
-
-			new SimplyDbInitializer().InitializeTables(modelBuilder);
+			_dbModelsCreater.CreateModels(modelBuilder);
+			_dbInitializer.Initialize(modelBuilder);
 		}
 	}
 }

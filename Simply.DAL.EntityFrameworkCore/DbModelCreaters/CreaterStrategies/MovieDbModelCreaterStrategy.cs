@@ -2,8 +2,8 @@
 
 using Simply.DAL.EntityFrameworkCore.Entity;
 
-namespace Simply.DAL.EntityFrameworkCore.DbModelCreaters {
-	internal class MovieDbModelCreater : IDbModelCreater {
+namespace Simply.DAL.EntityFrameworkCore.DbModelCreaters.CreaterStrategies {
+	internal class MovieDbModelCreaterStrategy : IDbModelCreaterStrategy {
 		public void CreateModel(ModelBuilder modelBuilder) {
 			modelBuilder.Entity<Movie>()
 				.Property(m => m.Id)

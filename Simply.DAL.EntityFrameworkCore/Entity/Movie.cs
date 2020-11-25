@@ -1,11 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.Contracts;
 
 using Simply.DAL.EntityFrameworkCore.Entity.Personals;
 using Simply.DAL.EntityFrameworkCore.Entity.Types;
 
 namespace Simply.DAL.EntityFrameworkCore.Entity {
 	public class Movie {
+		public Movie() {
+		}
+
+		public Movie(IEnumerable<Member> members) {
+			Contract.Requires(members != null);
+
+			Members = members;
+		}
+
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
 
