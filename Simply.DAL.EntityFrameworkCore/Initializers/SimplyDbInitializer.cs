@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using Simply.DAL.EntityFrameworkCore.Entity.Types;
-using Simply.DAL.EntityFrameworkCore.Initializers.Data;
+using Simply.DAL.EntityFrameworkCore.Initializers.Data.Types;
+using Simply.DAL.EntityFrameworkCore.Models.Types;
 
 namespace Simply.DAL.EntityFrameworkCore.Initializers {
 	internal class SimplyDbInitializer : ISimplyDbInitializer {

@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using Simply.DAL.EntityFrameworkCore.DbModelCreaters.Creater;
-using Simply.DAL.EntityFrameworkCore.Entity;
-using Simply.DAL.EntityFrameworkCore.Entity.Personals;
-using Simply.DAL.EntityFrameworkCore.Entity.Types;
+using Simply.DAL.EntityFrameworkCore.Configurations.Creater;
 using Simply.DAL.EntityFrameworkCore.Initializers;
+using Simply.DAL.EntityFrameworkCore.Models;
+using Simply.DAL.EntityFrameworkCore.Models.Personals;
+using Simply.DAL.EntityFrameworkCore.Models.Types;
 
 namespace Simply.DAL.EntityFrameworkCore.Context {
 	internal class SimplyDbContext : DbContext {
