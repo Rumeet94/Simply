@@ -3,7 +3,7 @@
 using Simply.DAL.EntityFrameworkCore.Models.Types.Bases;
 
 namespace Simply.DAL.EntityFrameworkCore.Models.Types {
-	public class Language : EntityTypeWithMovie {
+	public class Language : TypeModelWithMovie {
 		public Language() {
 		}
 

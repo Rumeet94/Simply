@@ -5,7 +5,7 @@ using Simply.DAL.EntityFrameworkCore.Models.Personals;
 using Simply.DAL.EntityFrameworkCore.Models.Types.Bases;
 
 namespace Simply.DAL.EntityFrameworkCore.Models.Types {
-	public class MemberType : BaseEntityType {
+	public class MemberType : BaseTypeModel {
 		public MemberType() {
 		}
 

@@ -3,7 +3,7 @@
 using Simply.DAL.EntityFrameworkCore.Models.Types.Bases;
 
 namespace Simply.DAL.EntityFrameworkCore.Models.Types {
-	public class Genre : EntityTypeWithMovie {
+	public class Genre : TypeModelWithMovie {
 		public Genre() {
 		}
 

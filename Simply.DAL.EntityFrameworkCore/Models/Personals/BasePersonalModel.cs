@@ -3,11 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.Contracts;
 
 namespace Simply.DAL.EntityFrameworkCore.Models.Personals {
-	public abstract class BasePersonalEntity {
-		public BasePersonalEntity() {
+	public abstract class BasePersonalModel {
+		public BasePersonalModel() {
 		}
 
-		public BasePersonalEntity(List<Movie> movies) {
+		public BasePersonalModel(List<Movie> movies) {
 			Contract.Requires(movies != null);
 
 			Movies = movies;

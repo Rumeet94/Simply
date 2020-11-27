@@ -3,7 +3,7 @@
 using Simply.DAL.EntityFrameworkCore.Models.Types;
 
 namespace Simply.DAL.EntityFrameworkCore.Models.Personals {
-	public class Owner : BasePersonalEntity {
+	public class Owner : BasePersonalModel {
 		public Owner() {
 		}
 
